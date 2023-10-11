@@ -3,8 +3,8 @@ package providers
 import (
 	"os"
 
-	"github.com/RedHatInsights/consoledot-go-starter-app/config"
-	"github.com/RedHatInsights/consoledot-go-starter-app/providers/database"
+	"github.com/RedHatInsights/${{ values.project_name }}/config"
+	"github.com/RedHatInsights/${{ values.project_name }}/providers/database"
 	"github.com/rs/zerolog/log"
 )
 
@@ -30,7 +30,7 @@ func Init(conf *config.Config) (Providers, func(Providers)) {
 	}
 }
 
-// dbConnect returns the datbase connection pool
+// dbConnect returns the database connection pool
 func dbConnect(conf *config.Config) database.ConnectionPool {
 	connPool, err := database.Connect(conf)
 	if err != nil {

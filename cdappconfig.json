@@ -9,10 +9,10 @@
             "secretAccessKey": "SECRET_ACCESS_KEY",
             "region": "EU",
             "logGroup": "base_app"
-            }
-        },
+        }
+    },
     "database": {
-        "name": "starter-app-db",
+        "name": "${{ values.project_name }}-db",
         "username": "shadowman",
         "password": "yearofthelinuxdesktop",
         "hostname": "0.0.0.0",
@@ -24,11 +24,11 @@
     },
     "endpoints": [
         {
-            "name": "starter-app-depolyment",
-            "app": "go-starter-app",
+            "name": "${{ values.project_name }}-api-server",
+            "app": "${{ values.project_name }}",
             "hostname": "0.0.0.0",
             "port": 8000,
-            "apiPath": "/api/starter-app-api"
+            "apiPath": "/api/{{ project_name}}-api"
         }
     ]
 }

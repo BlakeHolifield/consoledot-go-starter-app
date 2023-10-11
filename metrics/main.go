@@ -3,7 +3,7 @@ package metrics
 import (
 	"net/http"
 
-	"github.com/RedHatInsights/consoledot-go-starter-app/config"
+	"github.com/RedHatInsights/${{ values.project_name }}/config"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promauto"
 	"github.com/prometheus/client_golang/prometheus/promhttp"

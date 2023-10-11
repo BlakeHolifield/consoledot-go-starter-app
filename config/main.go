@@ -14,7 +14,7 @@ const (
 	localConfigFile = "cdappconfig.json"
 	//This should match the name of the deployment in the cdappconfig.json and your clowdapp
 	//We need this to resolve the api path when running on a cluster
-	deploymentName = "starter-app-depolyment"
+	deploymentName = "${{ values.project_name }}-api-server"
 	//Strings
 	postgres  = "postgres://"
 	apiPrefix = "/api/"
@@ -102,7 +102,7 @@ func (c *Config) loadEnvVars() {
 	err := godotenv.Load(envFile)
 	if err != nil {
 		// ... handle error
-		//log.Fatalf("Some error occured. Err: %s", err)
+		//log.Fatalf("Some error occurred. Err: %s", err)
 		panic(err)
 	}
 }

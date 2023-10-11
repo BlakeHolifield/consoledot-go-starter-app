@@ -1,0 +1,55 @@
+---
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+# some metadata about the template itself
+metadata:
+  name: consoledot-go-starter-app
+  title: ConsoleDot Go Starter App
+  description: Basic Go server for use in console.redhat.com backends
+spec:
+  owner: backstage/techdocs-core
+  type: service
+
+  # these are the steps which are rendered in the frontend with the form input
+  parameters:
+  - title: Name
+    required:
+    - name
+    properties:
+      name:
+        title: Name
+        type: string
+        description: Unique name of the component
+        ui:autofocus: true
+        ui:options:
+          rows: 5
+          
+  - title: Choose a location
+    required:
+    - repoUrl
+    properties:
+      repoUrl:
+        title: Repository Location
+        type: string
+        ui:field: RepoUrlPicker
+        ui:options:
+          allowedHosts:
+          - github.com
+
+  steps:
+  - id: fetch-base
+    name: Fetch Base
+    action: fetch:template
+    input:
+      url: ./
+      values:
+        project_name: ${{ parameters.name | lower }}
+        test_value: "foo"
+        quay_org: "cloudservices"
+
+  - id: results
+    name: Results
+    action: debug:log
+    input:
+      listWorkspace: true
+

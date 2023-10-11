@@ -1,4 +1,5 @@
-basePath: /api/starter-app-api/v1
+---
+basePath: /api/${{ values.project_name }}-api/v1
 info:
   contact:
     email: addrew@redhat.com
@@ -7,9 +8,9 @@ info:
   title: ConsoleDot Go Starter App API
   version: "1.0"
 paths:
-  /api/starter-app-api/v1/db-info:
+  /api/${{ values.project_name }}-api/v1/db-info:
     get:
-      description: Query the API to get some database informaiton
+      description: Query the API to get some database information
       produces:
       - application/json
       responses:
@@ -21,9 +22,9 @@ paths:
       summary: Get database info
       tags:
       - api
-  /api/starter-app-api/v1/hello:
+  /api/${{ values.project_name }}-api/v1/hello:
     get:
-      description: Recieve a greeting from the API
+      description: Receive a greeting from the API
       produces:
       - application/json
       responses:
@@ -32,7 +33,7 @@ paths:
           schema:
             additionalProperties: true
             type: object
-      summary: Recieve a greeting
+      summary: Receive a greeting
       tags:
       - api
   /healthz:

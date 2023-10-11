@@ -9,11 +9,11 @@
         },
         "version": "1.0"
     },
-    "basePath": "/api/starter-app-api/v1",
+    "basePath": "/api/${{ values.project_name }}-api/v1",
     "paths": {
-        "/api/starter-app-api/v1/db-info": {
+        "/api/${{ values.project_name }}-api/v1/db-info": {
             "get": {
-                "description": "Query the API to get some database informaiton",
+                "description": "Query the API to get some database information",
                 "produces": [
                     "application/json"
                 ],
@@ -32,16 +32,16 @@
                 }
             }
         },
-        "/api/starter-app-api/v1/hello": {
+        "/api/${{ values.project_name }}-api/v1/hello": {
             "get": {
-                "description": "Recieve a greeting from the API",
+                "description": "Receive a greeting from the API",
                 "produces": [
                     "application/json"
                 ],
                 "tags": [
                     "api"
                 ],
-                "summary": "Recieve a greeting",
+                "summary": "Receive a greeting",
                 "responses": {
                     "200": {
                         "description": "OK",

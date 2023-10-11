@@ -6,8 +6,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/RedHatInsights/consoledot-go-starter-app/providers"
-	"github.com/RedHatInsights/consoledot-go-starter-app/routes"
+	"github.com/RedHatInsights/${{ values.project_name }}/providers"
+	"github.com/RedHatInsights/${{ values.project_name }}/routes"
 	"github.com/jackc/pgx/v4"
 	"github.com/stretchr/testify/assert"
 )
@@ -17,7 +17,7 @@ type mockQueryRow struct {
 }
 
 func (m *mockQueryRow) Scan(dest ...interface{}) error {
-	retVal := "Database : starter-app-db, User : shadowman"
+	retVal := "Database : ${{ values.project_name }}-db, User : shadowman"
 	*dest[0].(*string) = retVal
 	return nil
 }
@@ -81,5 +81,5 @@ func TestDBInfoRoute(t *testing.T) {
 	router.ServeHTTP(w, req)
 
 	assert.Equal(t, http.StatusOK, w.Code)
-	assert.Equal(t, "{\"db-info\":\"Database : starter-app-db, User : shadowman\"}", w.Body.String())
+	assert.Equal(t, "{\"db-info\":\"Database : ${{ values.project_name }}-db, User : shadowman\"}", w.Body.String())
 }

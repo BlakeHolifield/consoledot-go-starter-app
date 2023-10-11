@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"github.com/RedHatInsights/consoledot-go-starter-app/providers"
+	"github.com/RedHatInsights/${{ values.project_name }}/providers"
 	ginzerolog "github.com/dn365/gin-zerolog"
 	"github.com/gin-gonic/gin"
 )

@@ -4,7 +4,7 @@ import (
 	"context"
 	"net/http"
 
-	"github.com/RedHatInsights/consoledot-go-starter-app/metrics"
+	"github.com/RedHatInsights/${{ values.project_name }}/metrics"
 	"github.com/gin-gonic/gin"
 
 	"github.com/rs/zerolog/log"
@@ -26,7 +26,7 @@ func addAPIRoutes(apiGroup *gin.RouterGroup) {
 // @Tags         api
 // @Produce      json
 // @Success      200  {object}  map[string]any
-// @Router       /api/starter-app-api/v1/hello [get]
+// @Router       /api/${{ values.project_name }}-api/v1/hello [get]
 func helloWorld(context *gin.Context) {
 	metrics.IncrementRequests()
 	context.JSON(http.StatusOK, gin.H{
@@ -40,7 +40,7 @@ func helloWorld(context *gin.Context) {
 // @Tags         api
 // @Produce      json
 // @Success      200  {object}  map[string]any
-// @Router       /api/starter-app-api/v1/db-info [get]
+// @Router       /api/${{ values.project_name }}-api/v1/db-info [get]
 func dbInfo(ginContext *gin.Context) {
 	var retVal string
 	retStatus := http.StatusOK

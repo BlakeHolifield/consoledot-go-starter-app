@@ -1,11 +1,11 @@
 package main
 
 import (
-	"github.com/RedHatInsights/consoledot-go-starter-app/config"
-	"github.com/RedHatInsights/consoledot-go-starter-app/docs"
-	"github.com/RedHatInsights/consoledot-go-starter-app/metrics"
-	"github.com/RedHatInsights/consoledot-go-starter-app/providers"
-	"github.com/RedHatInsights/consoledot-go-starter-app/routes"
+	"github.com/RedHatInsights/${{ values.project_name }}/config"
+	"github.com/RedHatInsights/${{ values.project_name }}/docs"
+	"github.com/RedHatInsights/${{ values.project_name }}/metrics"
+	"github.com/RedHatInsights/${{ values.project_name }}/providers"
+	"github.com/RedHatInsights/${{ values.project_name }}/routes"
 
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
@@ -27,7 +27,7 @@ var (
 // @description     API Docs for ConsoleDot Go Starter App API
 // @contact.name   	Adam Drew
 // @contact.email  	addrew@redhat.com
-// @BasePath  		/api/starter-app-api/v1
+// @BasePath  		/api/${{ values.project_name }}-api/v1
 func main() {
 	// Initialize logging
 	initLogging()

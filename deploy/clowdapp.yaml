@@ -1,7 +1,8 @@
+---
 apiVersion: template.openshift.io/v1
 kind: Template
 metadata:
-  name: {{ project_name }}
+  name: ${{ values.project_name }}
 objects:
 - apiVersion: cloud.redhat.com/v1alpha1
   kind: ClowdApp
@@ -11,38 +12,38 @@ objects:
   spec:
     envName: ${ENV_NAME}
     deployments:
-    - name: starter-app-depolyment
+    - name: ${{ values.project_name }}-api-server
       podSpec:
         image: ${IMAGE}:${IMAGE_TAG}
-        livenessProbe: 
+        livenessProbe:
           httpGet:
             path: /livez
             port: 8000
-        readinessProbe: 
+        readinessProbe:
           httpGet:
             path: /readyz
             port: 8000
       webServices:
-        public: 
+        public:
           enabled: true
-          apiPath: starter-app-api
+          apiPath: ${{ values.project_name }}-api
           whitelistPaths:
           - /livez
           - /readyz
-          - /api/starter-app-api/*
+          - /api/${{ values.project_name }}/*
     database:
       name: ${DB_NAME}
       version: 12
 parameters:
 - description: Name of the ClowdApp
   name: CLOWDAPP_NAME
-  value: go-starter-app
-- description : ClowdEnvironment name
+  value: ${{ values.project_name }}
+- description: ClowdEnvironment name
   name: ENV_NAME
   value: stage
-- description : Database Name
+- description: Database Name
   name: DB_NAME
-  value: starter-app-db
+  value: ${{ values.project_name }}-db
 - description: Namespace to deploy into
   name: NAMESPACE
   value: ${NAMESPACE}

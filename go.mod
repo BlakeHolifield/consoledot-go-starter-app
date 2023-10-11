@@ -1,4 +1,4 @@
-module github.com/RedHatInsights/consoledot-go-starter-app
+module github.com/RedHatInsights/${{ values.project_name }}
 
 go 1.18
 

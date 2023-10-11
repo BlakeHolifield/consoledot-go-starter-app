@@ -1,7 +1,7 @@
 # Name of the binary we build
 BINARY_NAME=server
 # Quay repo for the project
-IMAGE=quay.io/rh_ee_addrew/consoledot-go-starter-app
+IMAGE=quay.io/${{ values.quay_org}}/${{ values.project_name }}
 # Tag for the image
 IMAGE_TAG=`git rev-parse --short=7 HEAD`
 

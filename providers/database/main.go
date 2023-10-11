@@ -3,7 +3,7 @@ package database
 import (
 	"context"
 
-	"github.com/RedHatInsights/consoledot-go-starter-app/config"
+	"github.com/RedHatInsights/${{ values.project_name }}/config"
 	"github.com/jackc/pgx/v4"
 	"github.com/jackc/pgx/v4/pgxpool"
 )

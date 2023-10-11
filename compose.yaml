@@ -7,4 +7,4 @@ services:
     environment:
       POSTGRES_USER: shadowman
       POSTGRES_PASSWORD: yearofthelinuxdesktop
-      POSTGRES_DB: starter-app-db
+      POSTGRES_DB: ${{ values.project_name }}-db
