@@ -23,7 +23,7 @@ spec:
         ui:autofocus: true
         ui:options:
           rows: 5
-          
+
   - title: Choose a location
     required:
     - repoUrl
@@ -41,7 +41,7 @@ spec:
     name: Fetch Base
     action: fetch:template
     input:
-      url: ./
+      url: https://github.com/BlakeHolifield/consoledot-go-starter-app
       values:
         project_name: ${{ parameters.name | lower }}
         test_value: "foo"
