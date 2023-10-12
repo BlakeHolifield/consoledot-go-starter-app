@@ -47,9 +47,24 @@ spec:
         test_value: "foo"
         quay_org: "cloudservices"
 
+  - id: publish
+    name: Publish
+    action: publish:github
+    input:
+      allowedHosts: ['github.com']
+      description: 'This is ${{ parameters.name }}'
+      repoUrl: ${{ parameters.repoUrl }}
+      defaultBranch: main
+
   - id: results
     name: Results
     action: debug:log
     input:
       listWorkspace: true
 
+  - id: register
+    name: Register
+    action: catalog:register
+    input:
+      repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
+      catalogInfoPath: '/catalog-info.yaml'
