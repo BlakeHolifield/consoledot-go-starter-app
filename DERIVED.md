@@ -1,5 +1,6 @@
-# ConsoleDot Go Starter App API
-Welcome to your new app! This README contains all the info you need to get started. After you are comfortable with the app feel free to replace the contents of this file.
+# ${{ values.project_name }}
+
+This README contains all the info you need to get started. After you are comfortable with the app feel free to replace the contents of this file.
 
 ## Quickstart
 
@@ -42,23 +43,23 @@ It'll take a minute or so for your app to spin up, so throw a ball around with a
 
 4. Say hi to your app!
 ```
-$ curl -XGET https://env-ephemeral-5irb9j-uqojupc5.apps.c-rh-c-eph.8p0c.p1.openshiftapps.com/api/starter-app-api/v1/hello
+$ curl -XGET https://env-ephemeral-5irb9j-uqojupc5.apps.c-rh-c-eph.8p0c.p1.openshiftapps.com/api/${{ values.project_name }}/v1/hello
 {"hello":"world"}
 ```
 
 5. Check out the API Docs in a browser:
 ```
-$ xdg-open https://env-ephemeral-5irb9j-uqojupc5.apps.c-rh-c-eph.8p0c.p1.openshiftapps.com/api/starter-app-api/api-docs/index.html
+$ xdg-open https://env-ephemeral-5irb9j-uqojupc5.apps.c-rh-c-eph.8p0c.p1.openshiftapps.com/api/${{ values.project_name }}/api-docs/index.html
 
 ```
 
 ## Configuration
 
 ### Clowder & App Config
-Clowdapps use the `cdappconfig.json` file for their infrustructure and resource config information. Database, kafka, storage and other config information is made available to your app through `cdappconfig.json`. When running on a cluster the app will load the Clowder provided `cdappconfig.json` and make it available on the `Config` object. When running locally your app will load the `cdappconfig.json` at the root of your application's source tree and make it available on the `Config` object.
+Clowdapps use the `cdappconfig.json` file for their infrastructure and resource config information. Database, kafka, storage and other config information is made available to your app through `cdappconfig.json`. When running on a cluster the app will load the Clowder provided `cdappconfig.json` and make it available on the `Config` object. When running locally your app will load the `cdappconfig.json` at the root of your application's source tree and make it available on the `Config` object.
 
 ### Environment Variables
-You can put any environemnt variable definitions you want in the `local.env` file. That file and any definitions in it are loaded at run time and are available to your app through the normal Golang OS env var library.
+You can put any environment variable definitions you want in the `local.env` file. That file and any definitions in it are loaded at run time and are available to your app through the normal Golang OS env var library.
 
 ### Config Files
 There's no single idiomatic way to handle config in Golang apps. Environment variables are probably the most popular, but other options exist. This starter app includes no configuration beyond environment variables and Clowder. You are welcome to use whatever else you like.
@@ -67,7 +68,7 @@ There's no single idiomatic way to handle config in Golang apps. Environment var
 
 0. Start the local dependency stack. This will start your database.
 ```
-$ make run-local-depts
+$ make run-local-deps
 ```
 1. Run the app 
 ```
@@ -75,5 +76,4 @@ $ make run
 ```
 
 ## Next Steps
-* Your new app is already initialized for git. Go ahead and push it up to the repo you specified: github.com/RedHatInsights/consoledot-go-starter-app
 * Explore the Makefile to see how to build the app, run tests, refresh the api docs, etc

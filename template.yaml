@@ -56,12 +56,6 @@ spec:
       repoUrl: ${{ parameters.repoUrl }}
       defaultBranch: main
 
-  - id: results
-    name: Results
-    action: debug:log
-    input:
-      listWorkspace: true
-
   - id: register
     name: Register
     action: catalog:register
