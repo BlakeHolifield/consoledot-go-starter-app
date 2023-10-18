@@ -1,8 +1,8 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "API Docs for ConsoleDot Go Starter App API",
-        "title": "ConsoleDot Go Starter App API",
+        "description": "API Docs for ${{ values.project_name }}API",
+        "title": "${{ values.project_name }}API",
         "contact": {
             "name": "Adam Drew",
             "email": "addrew@redhat.com"

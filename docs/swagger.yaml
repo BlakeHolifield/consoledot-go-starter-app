@@ -4,8 +4,8 @@ info:
   contact:
     email: addrew@redhat.com
     name: Adam Drew
-  description: API Docs for ConsoleDot Go Starter App API
-  title: ConsoleDot Go Starter App API
+  description: API Docs for ${{ values.project_name }} API
+  title: ${{ values.project_name }} API
   version: "1.0"
 paths:
   /api/${{ values.project_name }}-api/v1/db-info:

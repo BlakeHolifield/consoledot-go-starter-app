@@ -1,7 +1,7 @@
 ---
 greeting: >
 
-  :waving_hand: [bold blue]Welcome to the ConsoleDot Go Starter App generator![/bold blue]
+  :waving_hand: [bold blue]Welcome to the ${{ values.project_name }}generator![/bold blue]
 
 
   :stop_sign: [bold blue]Before generating your app please do the following:[/bold blue]
@@ -109,7 +109,7 @@ mutations:
   - name: "docs_name"
     prompt: ":book: [green]Docs Name[/green]"
     help: "[gray][italic]Name that appears in docs, startup message, README, etc. Example: Starter App[/gray][/italic]"
-    replace: "ConsoleDot Go Starter App API"
+    replace: "${{ values.project_name }}API"
     default: "{{ app_name }}"
     files:
       - "main.go"

@@ -22,9 +22,9 @@ var (
 )
 
 // main godoc
-// @title ConsoleDot Go Starter App API
+// @title ${{ values.project_name }}API
 // @version         1.0
-// @description     API Docs for ConsoleDot Go Starter App API
+// @description     API Docs for ${{ values.project_name }}API
 // @contact.name   	Adam Drew
 // @contact.email  	addrew@redhat.com
 // @BasePath  		/api/${{ values.project_name }}-api/v1
@@ -50,7 +50,7 @@ func main() {
 func initLogging() {
 	// Set the default log level
 	zerolog.SetGlobalLevel(zerolog.InfoLevel)
-	log.Info().Msg("Starting ConsoleDot Go Starter App API")
+	log.Info().Msg("Starting ${{ values.project_name }}API")
 }
 
 // initAPIDocs sets up the swagger (openAPI) docs
