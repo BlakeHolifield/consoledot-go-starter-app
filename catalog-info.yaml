@@ -4,7 +4,7 @@ kind: Component
 metadata:
   name: ${{ values.project_name }}
   annotations:
-    backstage.io/techdocs-ref: dir:./docs
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: service
   owner: user:guest
