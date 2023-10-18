@@ -24,4 +24,4 @@ spec:
   lifecycle: production
   owner: user:guest
   definition:
-    $openapi: "./docs/swagger.yaml"
+    $text: "./docs/swagger.yaml"
