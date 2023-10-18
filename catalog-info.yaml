@@ -17,9 +17,11 @@ kind: API
 metadata:
   name: ${{ values.project_name }}-api
   description: The ${{ values.project_name }} REST API
+  annotations:
+    openapi/ref-basepath: ./docs
 spec:
   type: openapi
   lifecycle: production
   owner: user:guest
   definition:
-    $openapi: https://github.com/BlakeHolifield/consoledot-go-starter-app/blob/master/docs/swagger.yaml
+    $openapi: "./docs/swagger.yaml"
