@@ -1,0 +1,9 @@
+---
+site_name: ${{ values.project_name }}
+
+nav:
+- Home: index.md
+
+plugins:
+- techdocs-core
+
